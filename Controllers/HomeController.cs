@@ -17,6 +17,18 @@ public class HomeController : Controller
     {
         return View();
     }
+    public string Show()
+    {
+        return "this is second action method";
+    }
+    public ActionResult AboutUs()
+    {
+        return View();
+    }
+    public int Studentid(int id)
+    {
+        return id;
+    }
 
     public IActionResult Privacy()
     {
