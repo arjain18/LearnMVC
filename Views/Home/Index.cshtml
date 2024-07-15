@@ -28,3 +28,18 @@
         <h2>a</h2>
     }
 }
+<!-- Saccess message from Controller-->
+@ViewData["Message"]
+<ul>
+@{
+    foreach (string i in (string[])ViewData["FruitArray"])
+    {
+        <li>@i</li>
+    }
+}
+</ul>
+
+@{
+    var a = (learnMVC.Models.Employee)ViewData["Employee"];
+    }
+<p>Employee Name  @a.EmpName</p>

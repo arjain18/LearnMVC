@@ -15,6 +15,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewData["Message"]="Message from view data";
+        string[] Fruits ={"Apple", "banana", "grapes"};
+        ViewData["FruitArray"] = Fruits;
+        Employee employee = new Employee();
+        employee.EmpID = 1;
+        employee.EmpName = "Test";
+        employee.EmpDesignation = "designation";
+        ViewData["Employee"] = employee;
         return View();
     }
     public string Show()
