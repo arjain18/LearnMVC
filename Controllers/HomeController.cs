@@ -23,6 +23,8 @@ public class HomeController : Controller
         employee.EmpName = "Test";
         employee.EmpDesignation = "designation";
         ViewData["Employee"] = employee;
+        ViewBag.Message = "Messagefrom ViewBag";
+        ViewBag.CurrentDate = DateTime.Now.ToLongDateString();
         return View();
     }
     public string Show()
@@ -36,6 +38,14 @@ public class HomeController : Controller
     public int Studentid(int id)
     {
         return id;
+    }
+
+    public ActionResult DiffViewGabViewData()
+    {
+        ViewData["Message1"] = "Data comes form ViewData";
+        ViewBag.Message2 = "Data comes from ViewBag";
+
+        return View();
     }
 
     public IActionResult Privacy()
