@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using learnMVC.Models;
-
+using System.Web;
 namespace learnMVC.Controllers;
 
 public class HomeController : Controller
@@ -25,6 +25,7 @@ public class HomeController : Controller
         ViewData["Employee"] = employee;
         ViewBag.Message = "Messagefrom ViewBag";
         ViewBag.CurrentDate = DateTime.Now.ToLongDateString();
+     
         return View();
     }
     public string Show()
@@ -45,6 +46,13 @@ public class HomeController : Controller
         ViewData["Message1"] = "Data comes form ViewData";
         ViewBag.Message2 = "Data comes from ViewBag";
 
+        return View();
+    }
+    public ActionResult TempData1()
+    {
+        TempData["name"] = "Bill";
+        string[] games = { "hockey", "football", "tennis" };
+        TempData["games"] = games;
         return View();
     }
 

@@ -2,7 +2,10 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "AboutUs";
 }
-<h2>AboutUs</h2>
-<h2>@TempData["name"]</h2>
+@{
+     foreach (string item in (string[])@TempData["games"])
+    {
+        @item
+    }
+}
