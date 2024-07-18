@@ -25,6 +25,13 @@ public class HomeController : Controller
         ViewData["Employee"] = employee;
         ViewBag.Message = "Messagefrom ViewBag";
         ViewBag.CurrentDate = DateTime.Now.ToLongDateString();
+        //session
+        ViewData["varsession1"] = "this data is coming from view data";
+        ViewBag.varsession2 = "this data is comming from viewbag";
+        TempData["varsession3"] = "this data is coming from temodata";
+        //Session["varsession4"] = "this data is coming from session"; session no longer supported in .net 8
+
+        //session end
      
         return View();
     }
