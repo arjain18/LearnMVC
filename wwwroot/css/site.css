@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+.textBoxStyle {
+    background:Red; 
+    color:blue; 
+    font-weight:bold;   
+}

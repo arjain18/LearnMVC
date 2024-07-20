@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using learnMVC.Models;
 using System.Web;
+using Newtonsoft.Json;
 namespace learnMVC.Controllers;
 
 public class HomeController : Controller
@@ -30,9 +31,8 @@ public class HomeController : Controller
         ViewBag.varsession2 = "this data is comming from viewbag";
         TempData["varsession3"] = "this data is coming from temodata";
         //Session["varsession4"] = "this data is coming from session"; session no longer supported in .net 8
-
-        //session end
-     
+        //Stronly typed
+             
         return View();
     }
     public string Show()
@@ -41,6 +41,20 @@ public class HomeController : Controller
     }
     public ActionResult AboutUs()
     {
+
+        return View();
+    }
+    [HttpPost]
+    public ActionResult AboutUs(string fullName)
+    {
+         if(fullName == null)
+        {
+            ModelState.AddModelError("fullname", "FN is required");
+        }
+         if(ModelState.IsValid == true)
+        {
+            ViewData["SuccessMessage"] = "<script>alert('submitted')</script>";
+        }
         return View();
     }
     public int Studentid(int id)

@@ -10,6 +10,49 @@
 <nav>
     <ul>
     <li>@Html.ActionLink("Home Page","Index","Home")</li>
-        <li>@Html.ActionLink("Privacy", "Privacy", "Home")</li>
+    <li>@Html.ActionLink("Privacy", "Privacy", "Home")</li>
 </ul>
 </nav>
+@Html.TextBox("fullname", "your name here",
+new
+{
+@class = "textBoxStyle",
+title="enter your name"
+})
+@Html.TextBox("fullname1", "your name here1",
+    new
+    {
+        @class = "form-control",
+        @readonly = true
+    })
+@{
+    Html.BeginForm("AboutUs", "Home");
+}
+@Html.Label("UserName") &nbsp; @Html.TextBox("fullName")
+@Html.ValidationMessage("fullName")
+<br />
+<br />
+
+@Html.Label("Password") &nbsp; @Html.Password("Password")
+<br />
+<br />
+@Html.Label("Male") &nbsp; @Html.RadioButton("Gender", "Male",true)
+@Html.Label("Female") &nbsp; @Html.RadioButton("Gender", "Female")
+<br />
+<br />
+@Html.Label("Country") &nbsp; @Html.DropDownList("CountryList", new SelectList(new[] { "India", "US" }), "Choose country")
+<br />
+<br />
+@Html.Label("Comments") &nbsp; @Html.TextArea("Comments","hi",5,20,null)
+<br />
+<br />
+@Html.CheckBox("Accept terms", true) &nbsp; @Html.Label("I accept the terms")
+@Html.Hidden("id")
+<br />
+<br />
+<input type ="submit" value="Submit" />
+ @ViewData["SuccessMessage"]
+@Html.Raw(ViewData["SuccessMessage"])
+@{
+    Html.EndForm();
+}

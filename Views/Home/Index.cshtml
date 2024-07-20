@@ -44,3 +44,7 @@
     var a = (learnMVC.Models.Employee)ViewData["Employee"];
     }
 <p>Employee Name  @a.EmpName</p>
+@Html.Partial("_EmployeeList")
+@{
+    Html.RenderPartial("_EmployeeList");
+}
