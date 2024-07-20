@@ -1,0 +1,10 @@
+﻿@model learnMVC.Models.Employee
+@{
+    ViewBag.Title = "Employee";
+}
+@using (Html.BeginForm()){
+    <p>
+        @Html.LabelFor(model => model.EmpId) &nbsp 
+        @Html.TextFor(model => model.EmpId)
+    </p>
+}
